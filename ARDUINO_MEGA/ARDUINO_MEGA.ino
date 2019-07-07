@@ -17,10 +17,12 @@ int green = 0;
 int blue = 0;
 int total = 0;
 int jml = 0;
+String str;
 
 //int dataduit=0; 
 void setup() {
    Serial.begin(115200);
+   Serial1.begin(115200);
    lcd.init();
    lcd.setCursor(1,0);
    lcd.print("SMART MONEY");
@@ -52,7 +54,8 @@ void loop()
   Serial.print(green, DEC);
   Serial.print(" B Intensity : ");
   Serial.print(blue, DEC);
-  
+  str =String('R')+String(red)+String('G')+String(green)+String('B')+String(blue);
+  Serial1.println(str);
   Serial.println();
   
 //  if (red < 55 && red > 32 && green < 66 && green > 47 && blue < 38 && blue > 25) 
@@ -60,8 +63,8 @@ void loop()
      if (red == 20 && green == 25 && blue == 16) 
      {
     //dataduit=10000;
-    Serial.write(45);
-    Serial.write("Z");
+    //Serial.write(45);
+    Serial1.write("1");
     digitalWrite(led, HIGH);
     jml=10;
     total=jml+total;
@@ -85,8 +88,8 @@ void loop()
   {
 //    dataduit=5000;
 //    s.write(dataduit);
-    Serial.write(45);
-    Serial.write("X");
+    //Serial.write(45);
+    Serial1.write("2");
     digitalWrite(led, HIGH);
     jml=5;
     total=jml+total;
@@ -108,8 +111,8 @@ void loop()
   {
 //    dataduit=2000;
 //    s.write(dataduit);
-    Serial.write(45);
-    Serial.write("Q");
+    //Serial.write(45);
+    Serial1.write("3");
     digitalWrite(led, HIGH);
     jml=2;
     total=jml+total;
@@ -130,8 +133,8 @@ else if (red == 19 && green == 23 && blue == 20)
   {
 //    dataduit=1000;
 //    s.write(dataduit);
-    Serial.write(45);
-    Serial.write("D");
+    //Serial.write(45);
+    Serial1.write("4");
     digitalWrite(led, HIGH);
     jml=1;
     total=jml+total;
@@ -152,8 +155,8 @@ if (red == 27 && green == 23 && blue == 15)
   {
 //    dataduit=50000;
 //    s.write(dataduit);
-    Serial.write(45);
-    Serial.write("E");
+    //Serial.write(45);
+    Serial1.write("5");
     digitalWrite(led, HIGH);
     jml=50;
     total=jml+total;
@@ -174,8 +177,8 @@ if (red == 14 && green == 22 && blue == 16)
   {
 //    dataduit=100000;
 //    s.write(dataduit);
-    Serial.write(45);
-    Serial.write("F");
+    //Serial.write(45);
+    Serial1.write("6");
     digitalWrite(led, HIGH);
     jml=100;
     total=jml+total;
@@ -197,8 +200,8 @@ if (red == 14 && green == 22 && blue == 16)
 //  else if (red == 26 && green == 25 && blue == 22)
    if (red == 23 && green == 22 && blue == 20)
   {
-    Serial.write(45);
-    Serial.write("g");
+    //Serial.write(45);
+    Serial1.write("7");
     digitalWrite(led, HIGH);
     jml=20;
     total=jml+total;
@@ -206,8 +209,8 @@ if (red == 14 && green == 22 && blue == 16)
     lcd.setCursor(1,0);
     lcd.print(total);
     lcd.setCursor(1,1);
-    lcd.print("LIMA RIBU");
-    Serial.println(" - (lima Ribu)");
+    lcd.print("Dua Puluh Ribu");
+    Serial.println(" - (Dua Puluh Ribu)");
     Serial.println(total);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
@@ -237,6 +240,5 @@ digitalWrite(s2, HIGH);
 //count OUT, pGreen, GREEN
 green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
 }
-
 
 
