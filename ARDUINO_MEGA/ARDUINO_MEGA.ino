@@ -18,8 +18,6 @@ int blue = 0;
 int total = 0;
 int jml = 0;
 String str;
-
-//int dataduit=0; 
 void setup() {
    Serial.begin(115200);
    Serial1.begin(115200);
@@ -54,20 +52,19 @@ void loop()
   Serial.print(green, DEC);
   Serial.print(" B Intensity : ");
   Serial.print(blue, DEC);
-  str =String('R')+String(red)+String('G')+String(green)+String('B')+String(blue);
-  Serial1.println(str);
+//  str =String('R')+String(red)+String('G')+String(green)+String('B')+String(blue);
+//  Serial1.println(str);
   Serial.println();
   
 //  if (red < 55 && red > 32 && green < 66 && green > 47 && blue < 38 && blue > 25) 
  
      if (red == 20 && green == 25 && blue == 16) 
      {
-    //dataduit=10000;
-    //Serial.write(45);
-    Serial1.write("1");
     digitalWrite(led, HIGH);
     jml=10;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -86,13 +83,11 @@ void loop()
 // //red < 50 && red > 40 && green < 92 && green > 50 && blue < 76 && blue > 48
     else if (red == 15 && green == 22 && blue == 20)
   {
-//    dataduit=5000;
-//    s.write(dataduit);
-    //Serial.write(45);
-    Serial1.write("2");
     digitalWrite(led, HIGH);
     jml=5;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -109,13 +104,13 @@ void loop()
 
   else if (red == 20 && green == 22 && blue == 17)
   {
-//    dataduit=2000;
-//    s.write(dataduit);
     //Serial.write(45);
-    Serial1.write("3");
+    //Serial1.write("3");
     digitalWrite(led, HIGH);
     jml=2;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -131,13 +126,12 @@ void loop()
 
 else if (red == 19 && green == 23 && blue == 20)
   {
-//    dataduit=1000;
-//    s.write(dataduit);
     //Serial.write(45);
-    Serial1.write("4");
     digitalWrite(led, HIGH);
     jml=1;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -153,13 +147,12 @@ else if (red == 19 && green == 23 && blue == 20)
 
 if (red == 27 && green == 23 && blue == 15)
   {
-//    dataduit=50000;
-//    s.write(dataduit);
     //Serial.write(45);
-    Serial1.write("5");
     digitalWrite(led, HIGH);
     jml=50;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -175,13 +168,11 @@ if (red == 27 && green == 23 && blue == 15)
 
 if (red == 14 && green == 22 && blue == 16)
   {
-//    dataduit=100000;
-//    s.write(dataduit);
-    //Serial.write(45);
-    Serial1.write("6");
     digitalWrite(led, HIGH);
     jml=100;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -201,10 +192,11 @@ if (red == 14 && green == 22 && blue == 16)
    if (red == 23 && green == 22 && blue == 20)
   {
     //Serial.write(45);
-    Serial1.write("7");
     digitalWrite(led, HIGH);
     jml=20;
     total=jml+total;
+    str = String(jml);
+    Serial1.println(str);
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
