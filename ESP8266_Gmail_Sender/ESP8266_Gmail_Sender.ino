@@ -32,7 +32,7 @@ void setup()
     if(!connection_state)  // if not connected to WIFI
         Serial.println("GAK");
     subject = "SELAMAT DATANG DI SMART MONEY SAVE";
-    if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Semua data uang yang masuk akan masuk ke email ini")) {
+    if(gsender->Subject(subject)->Send("Your email", "Semua data uang yang masuk akan masuk ke email ini")) {
      }
     else {
         Serial.println(gsender->getError());
@@ -98,7 +98,7 @@ void kirim(){
     if (s == "10"){
     Serial.println("10K");
     subject = "UANG Rp. 10.000 TELAH MASUK";
-    if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 10.000 Telah Masuk")) {
+    if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 10.000 Telah Masuk")) {
     Serial.println("Message send.");
     }
   }
@@ -106,7 +106,7 @@ void kirim(){
 else if(s == "5"){
   Serial.println("5K");
    subject = "UANG Rp. 5.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 5.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 5.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
@@ -114,7 +114,7 @@ else if(s == "5"){
 else if(s == "2"){
   Serial.println("2K");
    subject = "UANG Rp. 2.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 2.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 2.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
@@ -122,7 +122,7 @@ else if(s == "2"){
 else if(s == "1"){
   Serial.println("1K");
    subject = "UANG Rp. 1.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 1.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 1.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
@@ -130,7 +130,7 @@ else if(s == "1"){
 else if(s == "50"){
   Serial.println("50K");
    subject = "UANG Rp. 50.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 50.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 50.000 Telah Masuk")) {
    Serial.println("Message send.");
     }
   }
@@ -138,7 +138,7 @@ else if(s == "50"){
 else if(s == "100"){
   Serial.println("100K");
   subject = "UANG Rp. 100.000 TELAH MASUK";
-  if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 100.000 Telah Masuk")) {
+  if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 100.000 Telah Masuk")) {
   Serial.println("Message send.");
   }
  }
@@ -146,7 +146,7 @@ else if(s == "100"){
 else if(s == "20"){
   Serial.println("20K");
   subject = "UANG Rp. 20.000 TELAH MASUK";
-  if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 20.000 Telah Masuk")) {
+  if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 20.000 Telah Masuk")) {
   Serial.println("Message send.");
   }
  }
