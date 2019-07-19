@@ -18,6 +18,8 @@ int blue = 0;
 int total = 0;
 int jml = 0;
 String str;
+
+//int dataduit=0; 
 void setup() {
    Serial.begin(115200);
    Serial1.begin(115200);
@@ -57,14 +59,13 @@ void loop()
   Serial.println();
   
 //  if (red < 55 && red > 32 && green < 66 && green > 47 && blue < 38 && blue > 25) 
- 
-     if (red == 20 && green == 25 && blue == 16) 
+     //if(digitalRead(button)==LOW) 
+     if (red == 27 && green == 35 && blue == 22) 
      {
     digitalWrite(led, HIGH);
     jml=10;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('A');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -77,17 +78,13 @@ void loop()
     analogWrite(enB, 255);
     delay(5000); 
   }
-//
-//  
-// //else if (red == 33 && green == 38 && blue == 33) 
-// //red < 50 && red > 40 && green < 92 && green > 50 && blue < 76 && blue > 48
-    else if (red == 15 && green == 22 && blue == 20)
+  
+    else if (red == 21 && green == 30 && blue == 28)
   {
     digitalWrite(led, HIGH);
     jml=5;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('B');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -102,15 +99,12 @@ void loop()
     }
 
 
-  else if (red == 20 && green == 22 && blue == 17)
+  else if (red == 27 && green == 30 && blue == 24)
   {
-    //Serial.write(45);
-    //Serial1.write("3");
     digitalWrite(led, HIGH);
     jml=2;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('C');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -124,14 +118,12 @@ void loop()
     delay(5000); 
     }
 
-else if (red == 19 && green == 23 && blue == 20)
+else if (red == 24 && green == 30 && blue == 26)
   {
-    //Serial.write(45);
     digitalWrite(led, HIGH);
     jml=1;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('D');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -145,14 +137,12 @@ else if (red == 19 && green == 23 && blue == 20)
     delay(5000); 
     }
 
-if (red == 27 && green == 23 && blue == 15)
+else if (red == 30 && green == 28 && blue == 19)
   {
-    //Serial.write(45);
     digitalWrite(led, HIGH);
     jml=50;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('E');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -166,13 +156,12 @@ if (red == 27 && green == 23 && blue == 15)
     delay(5000); 
     }
 
-if (red == 14 && green == 22 && blue == 16)
+else if (red == 17 && green == 28 && blue == 21)
   {
     digitalWrite(led, HIGH);
     jml=100;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('F');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -185,18 +174,13 @@ if (red == 14 && green == 22 && blue == 16)
     analogWrite(enB, 255);
     delay(5000); 
     }
-
-
-//else if (red < 78 && red > 55 && green < 63 && green > 61 && blue < 55 && blue > 49)
-//  else if (red == 26 && green == 25 && blue == 22)
-   if (red == 23 && green == 22 && blue == 20)
+    
+else if (red == 28 && green == 29 && blue == 25)
   {
-    //Serial.write(45);
     digitalWrite(led, HIGH);
     jml=20;
     total=jml+total;
-    str = String(jml);
-    Serial1.println(str);
+    Serial1.println('G');
     lcd.clear();
     lcd.setCursor(1,0);
     lcd.print(total);
@@ -207,7 +191,8 @@ if (red == 14 && green == 22 && blue == 16)
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
     analogWrite(enB, 255);
-    delay(5000);     }
+    delay(5000);
+    }
 
   else {
     Serial.println("COBA LAGI");
@@ -232,5 +217,6 @@ digitalWrite(s2, HIGH);
 //count OUT, pGreen, GREEN
 green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);
 }
+
 
 
