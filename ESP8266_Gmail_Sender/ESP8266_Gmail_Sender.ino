@@ -9,7 +9,8 @@ uint8_t connection_state = 0;                    // Connected to WIFI or not
 //uint16_t reconnect_interval = 10000;             // If not connected wait time to try again
 #pragma endregion Globals
 //int s;
-String s;
+//String s;
+char s;
 String subject;
 Gsender *gsender = Gsender::Instance();    // Getting pointer to class instance
 WiFiServer server(80);
@@ -27,14 +28,28 @@ void setup()
     WiFiManager wifiManager;
     wifiManager.resetSettings();
     wifiManager.autoConnect("Smart Money Safe");
+//    Serial.println("Connected.");
+//    Serial.println("");
+//    Serial.println("WiFi Connected.");
+//    Serial.print("IP address: ");
+//    Serial.println(WiFi.localIP());
+//    Serial.println("");
+//    Serial.println("WiFi Connected.");
+//    Serial.print("IP address: ");
+//    Serial.println(WiFi.localIP());
+//    Serial.println("Sensor Active");
     connection_state = WiFi.localIP();
     
     if(!connection_state)  // if not connected to WIFI
         Serial.println("GAK");
+ //   Gsender *gsender = Gsender::Instance();    // Getting pointer to class instance
     subject = "SELAMAT DATANG DI SMART MONEY SAVE";
-    if(gsender->Subject(subject)->Send("Your email", "Semua data uang yang masuk akan masuk ke email ini")) {
-     }
+    if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Semua data uang yang masuk akan masuk ke email ini")) {
+    
+// Serial.println("Message send.");
+    }
     else {
+//        Serial.print("Error sending message: ");
         Serial.println(gsender->getError());
     }
 }
@@ -45,15 +60,17 @@ void loop(){
 //       s = Serial.readString();
 //       Serial.print(s.toInt());
           s = Serial.read();
-       kirim();
+          kirim();
     }
 WiFiClient client = server.available();
 if (client) {                             
- String currentLine = "";                
+//    Serial.println("New Client.");          
+    String currentLine = "";                
     while (client.connected()) {            
       if (client.available()) {             
         char c = client.read();             
-         header += c;
+        //Serial.write(c);                    
+        header += c;
         if (c == '\n') {                    
             if (currentLine.length() == 0) {
             client.println("HTTP/1.1 200 OK");
@@ -95,58 +112,58 @@ if (client) {
 }
 
 void kirim(){
-    if (s == "10"){
+    if (s == 'A'){
     Serial.println("10K");
     subject = "UANG Rp. 10.000 TELAH MASUK";
-    if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 10.000 Telah Masuk")) {
+    if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 10.000 Telah Masuk")) {
     Serial.println("Message send.");
     }
   }
   
-else if(s == "5"){
+else if(s == 'B'){
   Serial.println("5K");
    subject = "UANG Rp. 5.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 5.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 5.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
 
-else if(s == "2"){
+else if(s == 'C'){
   Serial.println("2K");
    subject = "UANG Rp. 2.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 2.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 2.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
 
-else if(s == "1"){
+else if(s == 'D'){
   Serial.println("1K");
    subject = "UANG Rp. 1.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 1.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 1.000 Telah Masuk")) {
    Serial.println("Message send.");
    }
   }
 
-else if(s == "50"){
+else if(s == 'E'){
   Serial.println("50K");
    subject = "UANG Rp. 50.000 TELAH MASUK";
-   if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 50.000 Telah Masuk")) {
+   if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 50.000 Telah Masuk")) {
    Serial.println("Message send.");
     }
   }
   
-else if(s == "100"){
+else if(s == 'F'){
   Serial.println("100K");
   subject = "UANG Rp. 100.000 TELAH MASUK";
-  if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 100.000 Telah Masuk")) {
+  if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 100.000 Telah Masuk")) {
   Serial.println("Message send.");
   }
  }
 
-else if(s == "20"){
+else if(s == 'G'){
   Serial.println("20K");
   subject = "UANG Rp. 20.000 TELAH MASUK";
-  if(gsender->Subject(subject)->Send("Your email", "Uang Rp. 20.000 Telah Masuk")) {
+  if(gsender->Subject(subject)->Send("indrajitalepro@gmail.com", "Uang Rp. 20.000 Telah Masuk")) {
   Serial.println("Message send.");
   }
  }
@@ -156,3 +173,4 @@ else{
 }
 
 }
+
